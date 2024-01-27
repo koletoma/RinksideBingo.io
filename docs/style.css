@@ -39,8 +39,9 @@ header {
 }
 table{
     width: 80%;
+    height: 80%;
 }
 td{
-    width: auto;
-    height: auto;
+    width: 20%;
+    height: 20%;
 }
