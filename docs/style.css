@@ -30,3 +30,7 @@ header {
     font-weight: bold;
     text-decoration: underline;
 }
+td{
+    width: auto;
+    height: auto;
+}
