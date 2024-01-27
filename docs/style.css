@@ -41,7 +41,11 @@ table{
     width: 80%;
     height: 80%;
 }
+#letters{
+    width: 20%;
+    height: 10%;
+}
 td{
     width: 20%;
-    height: 50%;
+    height: 15%;
 }
