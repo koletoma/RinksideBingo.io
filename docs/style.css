@@ -38,7 +38,7 @@ header {
     text-decoration: underline;
 }
 table{
-    justify-content: center;
+    width: 80%;
 }
 td{
     width: auto;
