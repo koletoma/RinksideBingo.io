@@ -30,6 +30,9 @@ header {
     font-weight: bold;
     text-decoration: underline;
 }
+table{
+    text-align: center;
+}
 td{
     width: auto;
     height: auto;
