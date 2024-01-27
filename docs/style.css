@@ -4,8 +4,14 @@
 /* [BODY FONT]    font-family: 'Roboto', sans-serif;       */
 body{
     background-color: rgb(83, 119, 83);
-    text-align: center;
+
+
+    display: flex;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
+    margin: 0;
+    
 }
 p{
     font-family: 'Lora', serif;
