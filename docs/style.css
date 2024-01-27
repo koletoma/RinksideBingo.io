@@ -31,7 +31,7 @@ header {
     text-decoration: underline;
 }
 table{
-    text-align: center;
+    justify-content: center;
 }
 td{
     width: auto;
