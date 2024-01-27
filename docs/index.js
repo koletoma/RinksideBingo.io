@@ -15,7 +15,7 @@ function MixItUp() {
         stack.push(text);
     })
 
-    var tilesArray = Document.querySelectorAll("#tile");
+    const tilesArray = document.querySelectorAll("#tile");
 
     tilesArray.forEach((tile)=>{
         tile.innerHTML = stack.pop();
