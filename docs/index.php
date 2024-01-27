@@ -8,7 +8,7 @@
     <title>Rinkside Bingo!</title>
 </head>
 <header>
-    <h>Rinkside Bingo!!</h>
+    <h>Rinkside Bingo Bud</h>
 </header>
 <body>
     
