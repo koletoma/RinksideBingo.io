@@ -1,6 +1,4 @@
-$(() => {
-    Shuffle();
-});
+Shuffle();
 
 function Shuffle() {
     //24 tiles required to be shuffled and placed into table upon page refresh
