@@ -1,21 +1,38 @@
-//MixItUp();
+/*
+Difficulty Breakdown:
+    1 -> 14 Common + 8 Uncommon + 2 Rare
+    2 -> 12 Common + 10 Uncommon + 2 Rare
+    3 -> 10 Common + 10 Uncommon + 4 Rare
+    4 -> 8 Common + 10 Uncommon + 6 Rare 
+*/
+var freeClick = false;
+const difficulty = 2;
 $(()=>{
     $(".tile").each((index,item)=>{
-        console.log("tiles found");
         $(item).on("click", () =>{
             //let tile = $("[class='" + item.class + "']");
             if(item.clicked == "false"){
                 item.clicked = "true";
-                item.style.backgroundColor = "red";
+                item.style.backgroundColor = "orange";
             }
             else
             {
                 item.clicked = "false";
                 item.style.backgroundColor = "white";
             }
-            
-
-            console.log("click!");
+        })
+    })
+    $("#free").each((index,item)=>{
+        $(item).on("click", () =>{
+            if(!freeClick){
+                freeClick = true;
+                item.style.backgroundColor = "orange";
+            }
+            else
+            {
+                freeClick = false;
+                item.style.backgroundColor = "white";
+            }
         })
     })
 })
@@ -23,33 +40,92 @@ window.addEventListener("load", (event) => {
     MixItUp();
   });
 
-function TileClick(){
-    $("[type=button]").each((item)=>{
-        $(item).on("click", () =>{
-            let tile = $("[class='" + item.class + "']");
-            console.log(tile.val());
-        })
-    })
-}
 function MixItUp() {
+    /*
+Difficulty Breakdown:
+    1 -> 14 Common + 8 Uncommon + 2 Rare
+    2 -> 12 Common + 10 Uncommon + 2 Rare
+    3 -> 10 Common + 10 Uncommon + 4 Rare
+    4 -> 8 Common + 10 Uncommon + 6 Rare 
+*/
     //24 tiles required to be shuffled and placed into table upon page refresh
-    tileTextArray = [
+    /*tileTextArray = [
         "Home Goal", "Away Goal", "Face-Off Violation", "One-Timer", "Hat-Trick",
         "High Stick", "Icing", "Power Play Goal", "Penalty Kill", "Tripping",
         "Overtime", "Player Blocks Shot", "Blood!", "Offside", "Puck In Stands",
         "Glove Save", "Fight Ensues", "Ref Falls Down", "Fans Boo", "Lost Fan",
-        "Double-Double", "Player Exits Game Early", "Broken Stick", "Top Shelf"
+        "Double-Double", "Player Exits Game", "Broken Stick", "Top Shelf", "Mascot on Camera",
+        ""
+    ];
+    */
+    commonTiles = [
+        "Icing", "Home Goal" , "Away Goal" , "Offside" , "Tripping" , "Hooking", "High Stick",
+        "Puck In Stands" , "Broken Stick" , "3 on 2" , "Player Blocks Shot", "Glove Save", "Mascot on Camera", 
+        "Face Off Violation", "Penalty Kill (Home)", "Penalty Kill (Away)",
+        "PowerPlay Goal (Home)" , "PowerPlay Goal (Away)"
+    ];
+
+    uncommonTiles = [
+        "Hit the Post", "Fight Ensues" , "Double-Double" , "Blood!" , 
+        "Player Earns 3pts" , "Goalie Interference" , "Net off post" , "Player Exits Game", 
+        "Top Shelf", "Captain Scores", "Rookie"
+    ];
+    rareTiles = [
+        "Ref Falls Down" , "Lost Fan" , "Hat-Trick" , "Too Many Men" , "Empty Net Goal" , "Own Goal"
     ];
     
-    var stack = [];
-    shuffle(tileTextArray).forEach((text)=>{
-        stack.push(text);
-    })
+
+    var tiles = [];
+    var comCount = 12;
+    var uncomCount = 10;
+    var rareCount = 2;
+    switch(difficulty){
+        case 1:
+            comCount = 14;
+            uncomCount = 8;
+            rareCount = 2;
+            break;
+        case 2:
+            comCount = 12;
+            uncomCount = 10;
+            rareCount = 2;
+            break;
+        case 3:
+            comCount = 10;
+            uncomCount = 10;
+            rareCount = 4;
+            break;
+        case 4:
+            comCount = 8;
+            uncomCount = 10;
+            rareCount = 6;
+        default:
+            break;
+    }
+
+    //Shuffle lists
+    commonTiles = shuffle(commonTiles);
+    uncommonTiles = shuffle(uncommonTiles);
+    rareTiles = shuffle(rareTiles);
+
+    //populate "tiles" array
+    for(c = 0; c < comCount;c++){
+        tiles.push(commonTiles.pop());
+    }
+    for(u = 0; u < uncomCount; u++){
+        tiles.push(uncommonTiles.pop());
+    }
+    for(r = 0; r < rareCount; r++){
+        tiles.push(rareTiles.pop());
+    }
+
+    //shuffle "tiles" array
+    tiles = shuffle(tiles);
 
     const tilesArray = document.querySelectorAll("[class=tile]");
 
     tilesArray.forEach((tile,i)=>{
-        tile.innerHTML = stack.pop();
+        tile.innerHTML = tiles.pop();
         tile.clicked = "false";
         tile.style.backgroundColor = "white";
     });
