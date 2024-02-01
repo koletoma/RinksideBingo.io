@@ -1,7 +1,7 @@
 /*
 Difficulty Breakdown:
     1 -> 14 Common + 8 Uncommon + 2 Rare
-    2 -> 12 Common + 10 Uncommon + 2 Rare
+    2 -> 12 Common + 9 Uncommon + 3 Rare
     3 -> 10 Common + 10 Uncommon + 4 Rare
     4 -> 8 Common + 10 Uncommon + 6 Rare 
 */
