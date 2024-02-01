@@ -2,50 +2,80 @@
 /*   [TITLE FONT]    font-family: 'Lora', serif;           */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /* [BODY FONT]    font-family: 'Roboto', sans-serif;       */
-body{
-    background-color: rgb(83, 119, 83);
-
-
-    display: flex;
-    /*align-items: center;*/
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    
-}
-p{
-    font-family: 'Lora', serif;
-    text-align: left;
-    padding-left: 25%;
-    font-size: 30px;
-    font-weight: bold;
-}
-a{
-    color: whitesmoke;
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-}
-a:hover{
-    color: whitesmoke;
-}
-
-header {
-    font-size: 50px;
+header{
     text-align: center;
-    font-family: 'Lora', serif;
-    font-weight: bold;
+}
+#title{
     text-decoration: underline;
 }
-table{
-    width: 80%;
-    height: 80%;
+
+body{
+    background-color: rgb(83, 119, 83);
+    justify-content: center;
+    height: max-content;
 }
-th{
-    width: 20%;
-    height: 10%;
+
+table{
+    display: flex;
+    justify-content: center;
+}
+tbody{
+    align-content: center;
+}
+tr{
+    max-width: fit-content;
 }
 td{
-    width: 20%;
-    height: 15%;
+    width: 1rem;
+    height: 4rem;
+    
+ 
+}
+
+
+.bingo{
+    font-size: 1.5rem;
+    background-color: white;
+    width:100%;
+    height:100%;
+    
+    font-weight: bold;
+    text-align: center;
+
+    border-style: solid;
+    border-bottom: -1rem;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: -1rem;
+
+    
+}
+.bingo:hover{
+    background-color: white;
+}
+.tile{
+    font-size: 0.8rem;
+    background-color:lightgray;
+    width:100%;
+    height: 100%;
+}
+.tile:hover{
+    background-color: antiquewhite;
+}
+
+#free{
+    font-weight: bold;
+    font-size: 0.7rem;
+    width:100%;
+    height: 100%;
+}
+
+
+#desc{
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+h3{
+    text-align: center;
 }

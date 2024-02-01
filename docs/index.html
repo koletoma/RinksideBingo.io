@@ -4,53 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="index.js" type="text/javascript"></script>
 </head>
+<header>
+    <h1 id="title">Rink-Side BINGO</h1>
+</header>
 <body>
-    <table border="1">
-        <tr>
-        <th>B</th>
-        <th>I</th>
-        <th>N</th>
-        <th>G</th>
-        <th>O</th>
-        </tr>
-        <tr>
-        <td id = "tile">Home Goal</td>
-        <td id = "tile">Tripping</td>
-        <td id = "tile">Penalty Kill</td>
-        <td id = "tile">Icing</td>
-        <td id = "tile">Ref Falls Down</td>
-        </tr>
-        <tr>
-        <td id = "tile">Face-Off Violation</td>
-        <td id = "tile">Away Goal</td>
-        <td id = "tile">Player Blocks Shot</td>
-        <td id = "tile">Offside</td>
-        <td id = "tile">Overtime</td>
-        </tr>
-        <tr>
-        <td id = "tile">Broken Stick</td>
-        <td id = "tile">Fight Ensues</td>
-        <td id = "tile">FREE</td>
-        <td id = "tile">One-Timer</td>
-        <td id = "tile">High Stick</td>
-        </tr>
-        <tr>
-        <td id = "tile">Fans Boo</td>
-        <td id = "tile">Hat-Trick</td>
-        <td id = "tile">Blood!</td>
-        <td id = "tile">Glove Save</td>
-        <td id = "tile">Power Play Goal</td>
-        </tr>
-        <tr>
-        <td id = "tile">Player Exits Game Early</td>
-        <td id = "tile">Puck In Stands</td>
-        <td id = "tile">Lost Fan</td>
-        <td id = "tile">Double-Double</td>
-        <td id = "tile">Top Shelf</td>
-        </tr>
-        
-    </table>
+<table>
+    <tr>
+        <td><button class = "bingo" aria-readonly="true">B</button></td>
+        <td><button class = "bingo">I</button></td>
+        <td><button class = "bingo">N</button></td>
+        <td><button class = "bingo">G</button></td>
+        <td><button class = "bingo">O</button></td>
+    </tr>
+    <tr>
+        <td><button class = "tile">0</button></td>
+        <td><button class = "tile">1</button></td>
+        <td><button class = "tile">2</button></td>
+        <td><button class = "tile">3</button></td>
+        <td><button class = "tile">4</button></td>
+    </tr>
+    <tr>
+        <td><button class = "tile">0</button></td>
+        <td><button class = "tile">1</button></td>
+        <td><button class = "tile">2</button></td>
+        <td><button class = "tile">3</button></td>
+        <td><button class = "tile">4</button></td>
+    </tr>
+    <tr>
+        <td><button class = "tile">0</button></td>
+        <td><button class = "tile">1</button></td>
+        <td><button id="free">F R E E</button></td>
+        <td><button class = "tile">3</button></td>
+        <td><button class = "tile">4</button></td>
+    </tr>
+    <tr>
+        <td><button class = "tile">0</button></td>
+        <td><button class = "tile">1</button></td>
+        <td><button class = "tile">2</button></td>
+        <td><button class = "tile">3</button></td>
+        <td><button class = "tile">4</button></td>
+    </tr>
+    <tr>
+        <td><button class = "tile">0</button></td>
+        <td><button class = "tile">1</button></td>
+        <td><button class = "tile">2</button></td>
+        <td><button class = "tile">3</button></td>
+        <td><button class = "tile">4</button></td>
+    </tr>
+</table>
 </body>
+<footer>
+    <p id="desc">Refresh the page to generate a new game board</p>
+    <h3>Definitions</h3>
+    <p>"Double-Double" -> The same number is on the ice for both teams. <br><t>Ex&#41; Both Goalies are wearing number 1.</p>
+</footer>
 </html>

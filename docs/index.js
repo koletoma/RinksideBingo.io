@@ -1,5 +1,36 @@
-MixItUp();
+//MixItUp();
+$(()=>{
+    $(".tile").each((index,item)=>{
+        console.log("tiles found");
+        $(item).on("click", () =>{
+            //let tile = $("[class='" + item.class + "']");
+            if(item.clicked == "false"){
+                item.clicked = "true";
+                item.style.backgroundColor = "red";
+            }
+            else
+            {
+                item.clicked = "false";
+                item.style.backgroundColor = "white";
+            }
+            
 
+            console.log("click!");
+        })
+    })
+})
+window.addEventListener("load", (event) => {
+    MixItUp();
+  });
+
+function TileClick(){
+    $("[type=button]").each((item)=>{
+        $(item).on("click", () =>{
+            let tile = $("[class='" + item.class + "']");
+            console.log(tile.val());
+        })
+    })
+}
 function MixItUp() {
     //24 tiles required to be shuffled and placed into table upon page refresh
     tileTextArray = [
@@ -15,10 +46,12 @@ function MixItUp() {
         stack.push(text);
     })
 
-    const tilesArray = document.querySelectorAll("#tile");
+    const tilesArray = document.querySelectorAll("[class=tile]");
 
-    tilesArray.forEach((tile)=>{
+    tilesArray.forEach((tile,i)=>{
         tile.innerHTML = stack.pop();
+        tile.clicked = "false";
+        tile.style.backgroundColor = "white";
     });
     
 }
